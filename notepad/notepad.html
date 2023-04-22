@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="es" xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>NotePad Guerras tribales v1.0</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Notepad, bbcode, JavaScript">
+<meta name="keywords" content="JavaScript, Textarea, BB-Code">
+<style type="text/css">
+<!--
+body                 { font-family: Verdana,Arial,Helvetica,sans-serif; color: #000000; font-size:12px; background-color: #ffff3; margin: 20px; padding: 0px; border: 0px; }
+h1                   { margin: 0px 0px 20px 0px; font-size:20px; font-weight:bold; }
+input.button         { width: 85px; height: 20px; font-size: 11px; font-weight: normal; margin: 0px 0px 4px 0px; }
+button.smiley-button { font-size:11px; padding:0; margin:0px 1px 1px 0px; }
+img.smiley           { border: 0px; margin: 0px 0px 0px 0px; }
+*                    { padding: 0; margin: 0; font-family: Arial, sans-serif;}
+ul                   {list-style: none;} 
+ul a                 {color: #FFF;text-decoration: none;display: block;padding: 5px 5px 5px 10px;width: 125px;background: #333;}
+ul a:hover           {color: #4BD8FF;text-decoration: none;background: #3C3C3C;}
+ul li                {border-bottom: 1px solid #FFF;border-right: 1px solid #FFF;float: left;position: relative;} 
+ul li ul             {list-style: none;position: absolute;left: 0;top: 100%;display: none;width: 125px;border-top: 1px solid #FFF;} 
+-->
+</style>
+<script type="text/javascript">
+<!--
+//Get Data from TW First//
+
+//BBcode Second//
+function bbcode(form,field,v)
+ {
+ if (document.selection) // for IE
+   {
+    var str = document.selection.createRange().text;
+    document.forms[form].elements[field].focus();
+    var sel = document.selection.createRange();
+    sel.text = "[" + v + "]" + str + "[/" + v + "]";
+    return;
+   }
+  else if ((typeof document.forms[form].elements[field].selectionStart) != 'undefined') // for Mozilla
+   {
+    var txtarea = document.forms[form].elements[field];
+    var selLength = txtarea.textLength;
+    var selStart = txtarea.selectionStart;
+    var selEnd = txtarea.selectionEnd;
+    var oldScrollTop = txtarea.scrollTop;
+    var s1 = (txtarea.value).substring(0,selStart);
+    var s2 = (txtarea.value).substring(selStart, selEnd)
+    var s3 = (txtarea.value).substring(selEnd, selLength);
+    txtarea.value = s1 + '[' + v + ']' + s2 + '[/' + v + ']' + s3;
+    txtarea.selectionStart = s1.length;
+    txtarea.selectionEnd = s1.length + 5 + s2.length + v.length * 2;
+    txtarea.scrollTop = oldScrollTop;
+    txtarea.focus();
+    return;
+   }
+  else insert(form,field,'[' + v + '][/' + v + '] ');
+ }
+
+function insert(form,field,what)
+ {
+  if (document.forms[form].elements[field].createTextRange)
+   {
+    document.forms[form].elements[field].focus();
+    document.selection.createRange().duplicate().text = what;
+   }
+  else if ((typeof document.forms[form].elements[field].selectionStart) != 'undefined') // for Mozilla
+   {
+    var tarea = document.forms[form].elements[field];
+    var selEnd = tarea.selectionEnd;
+    var txtLen = tarea.value.length;
+    var txtbefore = tarea.value.substring(0,selEnd);
+    var txtafter =  tarea.value.substring(selEnd, txtLen);
+    var oldScrollTop = tarea.scrollTop;
+    tarea.value = txtbefore + what + txtafter;
+    tarea.selectionStart = txtbefore.length + what.length;
+    tarea.selectionEnd = txtbefore.length + what.length;
+    tarea.scrollTop = oldScrollTop;
+    tarea.focus();
+   }
+  else
+   {
+    document.forms[form].elements[field].value += what;
+    document.forms[form].elements[field].focus();
+   }
+ }
+
+function insert_link(form,field)
+ {
+ var link_text='Link text (optional):';
+ var link_target='Link target (URL):';
+
+ if (document.selection) // for IE
+   {
+    var str = document.selection.createRange().text;
+    document.forms[form].elements[field].focus();
+    var sel = document.selection.createRange();
+    var insert_link = prompt(link_target,'http://');
+    if(sel.text=='' && insert_link!='' && insert_link!=null) str = prompt(link_text,'');
+
+    if(insert_link && str!=null)
+     {
+      if(str!='')
+       {
+        sel.text = "[link=" + insert_link + "]" + str + "[/link]";
+       }
+      else
+       {
+        sel.text = "[link]" + insert_link + "[/link]";
+       }
+     }
+    return;
+   }
+  else if ((typeof document.forms[form].elements[field].selectionStart) != 'undefined') // for Mozilla
+   {
+    var txtarea = document.forms[form].elements[field];
+    var selLength = txtarea.textLength;
+    var selStart = txtarea.selectionStart;
+    var selEnd = txtarea.selectionEnd;
+    var oldScrollTop = txtarea.scrollTop;
+    var s1 = (txtarea.value).substring(0,selStart);
+    var s2 = (txtarea.value).substring(selStart, selEnd);
+    var s3 = (txtarea.value).substring(selEnd, selLength);
+
+    var insert_link = prompt(link_target,'http://');
+    if(selEnd-selStart==0 && insert_link!='' && insert_link!=null) s2 = prompt(link_text,'');
+    if(insert_link && s2!=null)
+     {
+      if(s2!='')
+       {
+        txtarea.value = s1 + '[link=' + insert_link + ']' + s2 + '[/link]' + s3;
+        var codelength = 14 + insert_link.length + s2.length;
+       }
+      else
+       {
+        txtarea.value = s1 + '[link]' + insert_link + '[/link]' + s3;
+        var codelength = 13 + insert_link.length;
+       }
+      txtarea.selectionStart = s1.length;
+      txtarea.selectionEnd = s1.length + codelength;
+      txtarea.scrollTop = oldScrollTop;
+      txtarea.focus();
+      return;
+     }
+   }
+  else insert('[link=http://www.domain.tld/]Link[/link]');
+ }
+ 
+//Insert Imagen
+
+function insert_img(form,field)
+ {
+ var img_text='Image text (optional):';
+ var img_target='Image target (URL):';
+
+ if (document.selection) // for IE
+   {
+    var str = document.selection.createRange().text;
+    document.forms[form].elements[field].focus();
+    var sel = document.selection.createRange();
+    var insert_img = prompt(img_target,'http://');
+    if(sel.text=='' && insert_img!='' && insert_img!=null) str = prompt(img_text,'');
+
+    if(insert_img && str!=null)
+     {
+      if(str!='')
+       {
+        sel.text = "[img]" + insert_img + "[/img]";
+       }
+      else
+       {
+        sel.text = "[img]" + insert_img + "[/img]";
+       }
+     }
+    return;
+   }
+  else if ((typeof document.forms[form].elements[field].selectionStart) != 'undefined') // for Mozilla
+   {
+    var txtarea = document.forms[form].elements[field];
+    var selLength = txtarea.textLength;
+    var selStart = txtarea.selectionStart;
+    var selEnd = txtarea.selectionEnd;
+    var oldScrollTop = txtarea.scrollTop;
+    var s1 = (txtarea.value).substring(0,selStart);
+    var s2 = (txtarea.value).substring(selStart, selEnd);
+    var s3 = (txtarea.value).substring(selEnd, selLength);
+	
+var insert_img = prompt(img_target,'http://');
+    if(selEnd-selStart==0 && insert_img!='' && insert_img!=null) s2 = prompt(img_text,'');
+    if(insert_img && s2!=null)
+     {
+      if(s2!='')
+       {
+        txtarea.value = s1 + '[img]' + insert_img + '[/img]' + s3;
+        var codelength = 14 + insert_img.length + s2.length;
+       }
+      else
+       {
+        txtarea.value = s1 + '[img]' + insert_img + '[/img]' + s3;
+        var codelength = 13 + insert_img.length;
+       }
+      txtarea.selectionStart = s1.length;
+      txtarea.selectionEnd = s1.length + codelength;
+      txtarea.scrollTop = oldScrollTop;
+      txtarea.focus();
+      return;
+     }
+   }
+  else insert('[img]http://www.domain.tld/imagen.gif[/img]');
+ } 
+    
+//-->
+</script>
+</head><body>
+<ul>
+<li><a href="http://es.twstats.com/" target="_blank">TWStats ES</a></li>
+<li><a href="http://es.twplus.org/area/" target="_blank">TWPlus ES</a></li>
+<li><a href="http://www.tribalwarsmap.com/es/" target="_blank">TWMap ES</a></li>
+<li><a href="http://es1.twmaps.org/" target="_blank">TW Maps</a></li>
+<li><a href="es.twstats.com/es1/index.php?page=attack_planner" target="_blank">TWS AttackPlanner</a></li>
+</ul></br>
+</br>
+<h1>GT Notepad v1.0</h1>
+<form id="demo_form" action="" method="post"><div>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="vertical-align: top;"><textarea rows="15" cols="70" 
+id="demo_textarea">[village]888|888[/village] - [player]metocanlaspelotas[/player]</textarea></td>
+<td style="vertical-align: top; padding-left: 15px;">
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format Village" value="Coordenadas" 
+onclick="bbcode('demo_form','demo_textarea','village');" type="button"><br>
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format Reservar" value="Reservar" 
+onclick="bbcode('demo_form','demo_textarea','claim');" type="button"><br>
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format Player" value="Jugador" 
+onclick="bbcode('demo_form','demo_textarea','player');" type="button"><br>
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format Tribu" value="Tribu" 
+onclick="bbcode('demo_form','demo_textarea','ally');" type="button"><br>
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format Spoiler" value="Saqueador" 
+onclick="bbcode('demo_form','demo_textarea','spoiler');" type="button"><br>
+<input class="button" style="font-weight: bold;" name="bbcode-button" 
+title="Format bold" value="Bold" 
+onclick="bbcode('demo_form','demo_textarea','b');" type="button"><br>
+<input class="button" style="font-style: italic;" name="bbcode-button" 
+title="Format italic" value="Italic" 
+onclick="bbcode('demo_form','demo_textarea','i');" type="button"><br>
+<input class="button" name="bbcode-button" value="Imagen" title="Insertar 
+Imagen" onclick="bbcode('demo_form','demo_textarea','img');" 
+type="button"><br>
+<input class="button" style="color: rgb(0, 0, 255); text-decoration: 
+underline;" name="bbcode-button" title="Insertar 
+Imagen" value="Imagen" onclick="insert_img('demo_form','demo_textarea');" 
+type="button"><br>
+<input class="button" style="color: rgb(0, 0, 255); text-decoration: 
+underline;" name="bbcode-button" title="Insertar Enlace" value="Enlace" 
+onclick="insert_link('demo_form','demo_textarea');" type="button"><br><br>
+</tr>
+</tbody></table>
+<input type="reset">
+</div></form>
+</body></html>
