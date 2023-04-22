@@ -3,23 +3,23 @@ var numscript = parseInt(prompt("1 = Extraer Coordinadas Especificas (MAPA)" + "
 
 switch (numscript) {
 	case 1:
-	$.getScript("https://www.scriptgt.125mb.com/gt/BBcode-pueblo.js");
+	$.getScript("https://github.com/Joalban/scriptgt/blob/main/BBcode-pueblo.js");
 	break;
 	
 	case 2:
-	$.getScript("https://www.scriptgt.125mb.com/gt/planeador-de-ataque.js");
+	$.getScript("https://github.com/Joalban/scriptgt/blob/main/planeador-de-ataque.js");
 	break;
 	
 	case 3:
-	$.getScript("https://www.scriptgt.125mb.com/gt/Attack-selector.js");
+	$.getScript("https://github.com/Joalban/scriptgt/blob/main/Attack-selector.js");
 	break;
 	
 	case 4:
-	$.getScript("https://www.scriptgt.125mb.com/gt/Fake-Ataque.js");
+	$.getScript("https://github.com/Joalban/scriptgt/blob/main/Fake-Ataque.js");
 	break;
 
 	case 5:
-	$.getScript("https://www.scriptgt.125mb.com/gt/Recursos-Coord.js");
+	$.getScript("https://github.com/Joalban/scriptgt/blob/main/Recursos-Coord.js");
 	break;
 
 	default:
