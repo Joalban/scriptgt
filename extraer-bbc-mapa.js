@@ -1,4 +1,4 @@
-javascript:win = window;
+win = window;
 // === ScriptAPI lib ===
 ScriptAPI.lib = {
     launchOnScreen: function (screen, onError, noConflict) {
