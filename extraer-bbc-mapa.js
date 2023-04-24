@@ -19,7 +19,7 @@ ScriptAPI.lib = {
 }
 win.DSSelectVillages =
     {
-        currentLang: 'es',
+        currentLang: 'fr',
         
         showWithCoords: true,
         
