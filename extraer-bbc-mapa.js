@@ -1,4 +1,4 @@
-win = window;
+javascript:win = window;
 // === ScriptAPI lib ===
 ScriptAPI.lib = {
     launchOnScreen: function (screen, onError, noConflict) {
@@ -50,15 +50,14 @@ win.DSSelectVillages =
                     enableShowWithCounter: "Liste",
                     enableShowWithNewLine: "Nouvelle ligne"
                 }
-            }
-			es: {
+            },
+	    es: {
                 UI: {
                     selectedVillages: "Seleccionar los Pueblos",
                     enableShowWithCoords: "BBcode",
                     enableShowWithCounter: "Lista",
                     enableShowWithNewLine: "Nueva Linea"
                 }
-            }
         },
         
         enableScript: function () {
