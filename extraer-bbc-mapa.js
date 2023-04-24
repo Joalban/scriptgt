@@ -58,7 +58,7 @@ win.DSSelectVillages =
                     enableShowWithCounter: "Lista",
                     enableShowWithNewLine: "Nueva Linea"
                 }
-	    },
+	    }
         },
         
         enableScript: function () {
