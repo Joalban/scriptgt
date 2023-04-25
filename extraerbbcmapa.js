@@ -9,7 +9,7 @@ ScriptAPI.lib = {
             return false;
         }
         if (ScriptAPI.preventLaunch === true)  {
-            UI.ErrorMessage('Un script est dÃ©jÃ  en cours d\'exÃ©cution', 5000);
+            UI.ErrorMessage('Un script est déjà en cours d\'exécution', 5000);
             return false;
     	}
         win.DSSelectVillages.enableScript();
@@ -19,7 +19,7 @@ ScriptAPI.lib = {
 }
 win.DSSelectVillages =
     {
-        currentLang: 'fr',
+        currentLang: 'es',
         
         showWithCoords: true,
         
@@ -38,9 +38,9 @@ win.DSSelectVillages =
         lang: {
             de: {
                 UI: {
-                    selectedVillages: "AusgewÃ¤hlte DÃ¶rfer:",
+                    selectedVillages: "Ausgewählte Dörfer:",
                     enableShowWithCoords: "Mit BBCodes anzeigen",
-                    enableShowWithCounter: "Mit ZÃ¤hler anzeigen"
+                    enableShowWithCounter: "Mit Zähler anzeigen"
                 }
             },
             fr: {
@@ -49,6 +49,14 @@ win.DSSelectVillages =
                     enableShowWithCoords: "BBcodes",
                     enableShowWithCounter: "Liste",
                     enableShowWithNewLine: "Nouvelle ligne"
+                }
+            },
+			es: {
+                UI: {
+                    selectedVillages: "Seleccionar los Pueblos:",
+                    enableShowWithCoords: "BBCodes",
+                    enableShowWithCounter: "Lista"
+					enableShowWithNewLine: "Nueva Linea"
                 }
             }
         },
@@ -201,4 +209,4 @@ win.DSSelectVillages =
         
         oldClickFunction: null
     };
-ScriptAPI.lib.launchOnScreen('map', "Ce script doit Ãªtre lancÃ© depuis la carte");
+ScriptAPI.lib.launchOnScreen('map', "Ejecutar desde el Mapa");
