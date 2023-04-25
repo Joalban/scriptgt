@@ -1,23 +1,9 @@
 /*
  * Script Name: Extended Player Info
  * Version: v1.0.4
- * Last Updated: 2023-04-19
- * Author: RedAlert
- * Author URL: https://twscripts.dev/
- * Author Contact: RedAlert#9859 (Discord)
- * Approved: t14036346
- * Approved Date: 2020-06-14
- * Mod: JawJaw
+ * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/playerinfo.js');
  */
 
-var scriptData = {
-    name: 'Extended Player Info',
-    version: 'v1.0.4',
-    author: 'RedAlert',
-    authorUrl: 'https://twscripts.dev/',
-    helpLink:
-        'https://forum.tribalwars.net/index.php?threads/extended-player-info.285361/',
-};
 
 // User Input
 if (typeof DEBUG !== 'boolean') DEBUG = false;
