@@ -1,7 +1,7 @@
 /*
  * Script Name: Tribe Info
  * Version: v1.0.4
- * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/playerinfo.js');
+ * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/tribeinfo.js');
  */
 
 
