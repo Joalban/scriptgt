@@ -193,7 +193,7 @@ try{
 		var msPerDay=msPerHour*hrsPerDay;
 		var minsPerDay=hrsPerDay*minsPerHour;
 
-		var version='v3.2';
+		var version='v7';
 
 		var unitConfig=fnCreateUnitConfig();
 
