@@ -1,9 +1,27 @@
 /*
- * Script Name: Tribe Info
- * Version: v1.0.4
- * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/tribeinfo.js');
+ * Script Name: Extended Tribe Info
+ * Version: v1.1.3
+ * Last Updated: 2022-10-05
+ * Author: RedAlert
+ * Author URL: https://twscripts.dev/
+ * Author Contact: RedAlert#9859 (Discord)
+ * Approved: t14075898
+ * Approved Date: 2020-07-04
+ * Mod: JawJaw
  */
 
+var scriptData = {
+    name: 'Extended Tribe Info',
+    version: 'v1.1.3',
+    author: 'RedAlert',
+    authorUrl: 'https://twscripts.dev/',
+    helpLink:
+        'https://forum.tribalwars.net/index.php?threads/extended-tribe-info.285566/',
+};
+
+/*--------------------------------------------------------------------------------------
+ * This script can NOT be cloned and modified without permission from the script author.
+ --------------------------------------------------------------------------------------*/
 
 // User Input
 if (typeof DEBUG !== 'boolean') DEBUG = false;
@@ -89,30 +107,6 @@ var translations = {
         'Sequantial Ram Only Fake Script': 'Fake script ordonné (bélier)',
         'Random Cat Only Fake Script': 'Fake script aléatoire (catapulte)',
         'Sequantial Cat Only Fake Script': 'Fake script ordonné (catapulte)',
-    },
-	es_ES: {
-        'Extended Tribe Info': 'Info Tribu',
-        Help: 'Ayuda',
-        'Script must be executed from a Tribe overview!':
-            "Ejecutar desde Perfil Tribu!",
-        'Villages Coords': 'Coord. Pueblos',
-        'Script is already running!': "Script se esta ejecutando!",
-        'TW Stats': 'TW Stats',
-        'TW Map Stats': 'TW Map Stats',
-        'TW Map': 'TW Map',
-        'Player Links': 'Enlace Jugadores',
-        'TW Tribe Stats': 'TW - Stats Tribu',
-        'TW Map Tribe Stats': 'TW Map - Stats Tribu',
-        'TW Map Tribe': 'TW Map - Tribu',
-        'Tribe Villages Coordinates': 'Coordenada Pueblos Tribu',
-        'village/s': 'pueblo(s)',
-        'Mailing List': "Carnet d'adresse tribu",
-        'Script Initialized!': 'Script initialisé!',
-        'Points Graph': 'Graficos Puntos',
-        'Random Ram Only Fake Script': 'Fake script Aleatorio (bélier)',
-        'Sequantial Ram Only Fake Script': 'Fake script Sequencial (bélier)',
-        'Random Cat Only Fake Script': 'Fake script Aleatorio (catapulte)',
-        'Sequantial Cat Only Fake Script': 'Fake script Sequencial (catapulte)',
     },
 };
 
