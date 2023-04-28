@@ -1,6 +1,5 @@
 /*
- * Script Name: Extended Player Info
- * Version: v1.0.4
+ * Script Name: Player Info
  * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/playerinfo.js');
  */
 
@@ -253,8 +252,8 @@ function initExtendedPlayerInfo(playerId) {
 
     var regex = '/\\d+/';
 
-    var randomOnlyScouts = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL; if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point'); coords = coords.split(' '); index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|'); doc.forms.units.x.value = coords[0]; doc.forms.units.y.value = coords[1]; if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) { insertUnit(doc.forms.units.spy, 0); insertUnit(doc.forms.units.spy, 1); } void (0);`;
-    var randomOnlyRams = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL;if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point');coords = coords.split(' ');index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|');doc.forms.units.x.value = coords[0];doc.forms.units.y.value = coords[1];if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) {insertUnit(doc.forms.units.spy, 0);insertUnit(doc.forms.units.spy, 1);}if (doc.getElementsByName('ram')[0].parentNode.textContent.match(${regex})[0] * 1 > 0) {insertUnit(doc.forms.units.ram, 0);insertUnit(doc.forms.units.ram, 1);}void (0);`;
+    var randomOnlyScouts = `javascript:var lanca =00; var espada=00; var barbaro=00; var arqueiro=00; var explorador=01; var cavalaria_leve=30; var cavalaria_arqueira=00; var cavalaria_pesada=00; var catapulta=00; var ariete=00; var coords_ataque='${playerVillageCoordsString}'; var apoiar=false; var aviso=true; var cookieName="fakeapoio"; var repetir_ataques = 1; $.getScript("https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/fakepro.js"); void(0);
+    var randomOnlyRams = `javascript:var lanca =00; var espada=00; var barbaro=00; var arqueiro=00; var explorador=01; var cavalaria_leve=30; var cavalaria_arqueira=00; var cavalaria_pesada=00; var catapulta=00; var ariete=00; var coords_ataque='${playerVillageCoordsString}'; var apoiar=true; var aviso=true; var cookieName="fakeapoio"; var repetir_ataques = 1; $.getScript("https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/fakepro.js"); void(0);`;
     var randomOnlyCats = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL;if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point');coords = coords.split(' ');index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|');doc.forms.units.x.value = coords[0];doc.forms.units.y.value = coords[1];if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) {insertUnit(doc.forms.units.spy, 0);insertUnit(doc.forms.units.spy, 1);}if (doc.getElementsByName('catapult')[0].parentNode.textContent.match(${regex})[0] * 1 > 0) {insertUnit(doc.forms.units.catapult, 0);insertUnit(doc.forms.units.catapult, 1);}void (0);`;
 
     var sequentialOnlyScouts = `javascript:coords='${playerVillageCoordsString}';var doc=document,index=0;url=doc.URL,Timing.pause();var cookieparams=doc.cookie.match(/GenFakeScript0=index([0-9]*)/);if(null!=cookieparams&&(index=1*cookieparams[1]),-1==url.indexOf("screen=place")){var r=confirm("This script needs to be run from the rally point Press OK to reset index.");1==r&&(index=0)}coords=coords.split(" ");var restart=!1;index>=coords.length&&(index=0,restart=!0);var d=new Date;d.setDate(d.getDate()+5),doc.cookie="GenFakeScript0=index"+(index+1)+";expires="+d.toGMTString(),restart&&alert("End of coord list is reached. Starting over"),coords=coords[index],coords=coords.split("|"),doc.forms.units.x.value=coords[0],doc.forms.units.y.value=coords[1],1*doc.getElementsByName("spy")[0].parentNode.textContent.match(${regex})[0]>=1&&(insertUnit(doc.forms.units.spy,0),insertUnit(doc.forms.units.spy,1));`;
@@ -319,11 +318,11 @@ function initExtendedPlayerInfo(playerId) {
 				</a>
 				<div class="extended-player-scripts extended-player-random-scripts" style="display:none;">
 					<div>
-						<label for="randomOnlyScouts">Random Only Scouts</label>
+						<label for="randomOnlyScouts">Fake Pro</label>
 						<textarea readonly id="randomOnlyScouts">${randomOnlyScouts}</textarea>
 					</div>
 					<div>
-						<label for="randomOnlyRams">Random Only Rams</label>
+						<label for="randomOnlyRams">Apoyos Pro</label>
 						<textarea readonly id="randomOnlyRams">${randomOnlyRams}</textarea>
 					</div>
 					<div>
@@ -350,17 +349,6 @@ function initExtendedPlayerInfo(playerId) {
 				</div>
 			</div>
 			<br>
-			<small>
-				<strong>
-					${tt(scriptData.name)} ${scriptData.version}
-				</strong> -
-				<a href="${scriptData.authorUrl}" target="_blank" rel="noreferrer noopener">
-					${scriptData.author}
-				</a> -
-				<a href="${scriptData.helpLink}" target="_blank" rel="noreferrer noopener">
-					${tt('Help')}
-				</a>
-			</small>
 		</div>
 		<style>
 			.ra-extended-player-info {
