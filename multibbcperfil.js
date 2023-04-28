@@ -1,4 +1,4 @@
-//# sourceURL=https://tylercamp.me/tw/get-coords.js
+//# javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/multibbcperfil.js');void(0);
 
 ; (() => {
     try {
@@ -139,7 +139,7 @@
 
 
         var $containerTable = $('<table id="show-coords" class="vis">');
-        $containerTable.append('<tr><th colspan="2">Village Coordinates Export (Script)</th></tr>')
+        $containerTable.append('<tr><th colspan="2">Exportar Coords Pueblos</th></tr>')
         var dataStyle = "width: 80vw; max-width: 50em;  height: 5em; overflow:scroll;";
         var labelStyle = "min-width: 12.5em; text-align: right;";
 
@@ -249,11 +249,11 @@
 
             var separator = '<div style="display:inline-block;width:0.5em;"></div> | <div style="display:inline-block;width:0.5em;"></div>';
 
-            $container.append(`<label for="gc-claims">Use [claim] instead of [coord]</label><input type="checkbox" id="gc-claims" ${options.useClaimsTag ? "checked" : ""}>`);
+            $container.append(`<label for="gc-claims">Utilizar [claim] en vez de [coord]</label><input type="checkbox" id="gc-claims" ${options.useClaimsTag ? "checked" : ""}>`);
             $container.append(separator);
-            $container.append(`<label for="gc-number">Numbering</label><input type="checkbox" id="gc-number" ${options.useNumbering ? "checked" : ""}>`);
+            $container.append(`<label for="gc-number">Numerar</label><input type="checkbox" id="gc-number" ${options.useNumbering ? "checked" : ""}>`);
             $container.append(separator);
-            $container.append(`<label for="gc-points">Show points</label><input type="checkbox" id="gc-points" ${options.includePoints ? "checked" : ""}>`);
+            $container.append(`<label for="gc-points">Mostrar Puntos</label><input type="checkbox" id="gc-points" ${options.includePoints ? "checked" : ""}>`);
 
             $container.append(separator);
             $container.append(`
@@ -274,7 +274,7 @@
 
         function makeBbcodeList(coords, $table) {
             var $row = $('<tr>');
-            $row.append(`<td style="${labelStyle}">BB Code<br>(List)</td>`);
+            $row.append(`<td style="${labelStyle}">BBCode<br>(List)</td>`);
 
             var bbCode = '';
             coords.forEach((co, i) => {
@@ -296,7 +296,7 @@
             });
 
             
-            bbCode = `[player]${playerName}[/player]'s Villages\n\n` + bbCode;
+            bbCode = `[player]${playerName}[/player]\n\n` + bbCode;
 
             $row.append(`<td><textarea style="${dataStyle}">${bbCode}</textarea></td>`);
 
@@ -305,7 +305,7 @@
 
         function makeBbcodeTable(coords, $table) {
             var $row = $('<tr>');
-            $row.append(`<td style="${labelStyle}">BB Code<br>(Table)</td>`);
+            $row.append(`<td style="${labelStyle}">BBCode<br>(Table)</td>`);
 
             var bbCode = '';
 
@@ -340,7 +340,7 @@
 
 
 
-            bbCode = `[player]${playerName}[/player]'s Villages\n\n[table]\n${header}\n${body}\n[/table]`;
+            bbCode = `[player]${playerName}[/player]\n\n[table]\n${header}\n${body}\n[/table]`;
             $row.append(`<td><textarea style="${dataStyle}">${bbCode}</textarea></td>`);
 
             $table.append($row);
@@ -352,18 +352,18 @@
             output = output.trim();
 
             var $row = $('<tr>');
-            $row.append(`<td style="${labelStyle}">Script Input<br>(One Big Line)</td>`);
+            $row.append(`<td style="${labelStyle}">Lista Script<br></td>`);
             $row.append(`<td><textarea style="${dataStyle}">"${output}"</textarea></td>`);
 
             $table.append($row);
         }
 
         function makeJsArray(coords, $table) {
-            var output = [];
+            var output = ,;
             coords.forEach((c) => output.push(c.label));
 
             var $row = $('<tr>');
-            $row.append(`<td style="${labelStyle}">Script Input<br>(Comma-Separated)</td>`);
+            $row.append(`<td style="${labelStyle}">Lista Script Chrome<br></td>`);
             $row.append(`<td><textarea style="${dataStyle}">${JSON.stringify(output).replace(/'/g, '')}</textarea></td>`);
 
             $table.append($row);
