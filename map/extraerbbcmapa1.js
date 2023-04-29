@@ -52,9 +52,9 @@ win.DSSelectVillages =
             },
             de: {
                 UI: {
-                    selectedVillages: "Ausgewählte Dörfer:",
+                    selectedVillages: "AusgewÃ¤hlte DÃ¶rfer:",
                     enableShowWithCoords: "Mit BBCodes anzeigen",
-                    enableShowWithCounter: "Mit Zähler anzeigen"
+                    enableShowWithCounter: "Mit ZÃ¤hler anzeigen"
                 }
             },
             fr: {
