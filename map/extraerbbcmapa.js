@@ -1,3 +1,9 @@
+/*
+ * Script Name: Coord Extrator
+ * javascript:$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/map/extraerbbcmapa.js');
+ * javascript:$.getScript('https://raw.githubusercontent.com/Joalban/scriptgt/main/map/extraerbbcmapa.js');
+ */
+ 
 win = window;
 // === ScriptAPI lib ===
 ScriptAPI.lib = {
@@ -36,6 +42,14 @@ win.DSSelectVillages =
         villagesId: [],
         
         lang: {
+		    es: {
+                UI: {
+                    selectedVillages: "Seleccionar los Pueblos:",
+                    enableShowWithCoords: "BBCodes",
+                    enableShowWithCounter: "Lista"
+					enableShowWithNewLine: "Nueva Linea"
+                }
+            },
             de: {
                 UI: {
                     selectedVillages: "Ausgewählte Dörfer:",
@@ -49,14 +63,6 @@ win.DSSelectVillages =
                     enableShowWithCoords: "BBcodes",
                     enableShowWithCounter: "Liste",
                     enableShowWithNewLine: "Nouvelle ligne"
-                }
-            },
-			es: {
-                UI: {
-                    selectedVillages: "Seleccionar los Pueblos:",
-                    enableShowWithCoords: "BBCodes",
-                    enableShowWithCounter: "Lista"
-					enableShowWithNewLine: "Nueva Linea"
                 }
             }
         },
