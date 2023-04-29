@@ -9,7 +9,7 @@ ScriptAPI.lib = {
             return false;
         }
         if (ScriptAPI.preventLaunch === true)  {
-            UI.ErrorMessage('Un script est déjà en cours d\'exécution', 5000);
+            UI.ErrorMessage('Script se esta ejecutando', 5000);
             return false;
     	}
         win.DSSelectVillages.enableScript();
