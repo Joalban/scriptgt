@@ -1,18 +1,3 @@
-/*
- * Script Name: Last Village Growth
- * Version: v1.0.6
- * Last Updated: 2021-12-18
- * Author: RedAlert
- * Author URL: https://twscripts.dev/
- * Author Contact: RedAlert#9859 (Discord)
- * Approved: N/A
- * Approved Date: 2021-07-19
- * Mod: JawJaw
- */
-
-/*--------------------------------------------------------------------------------------
- * This script can NOT be cloned and modified without permission from the script author.
- --------------------------------------------------------------------------------------*/
 
 // User Input
 if (typeof DEBUG !== 'boolean') DEBUG = false;
@@ -23,10 +8,6 @@ var scriptConfig = {
         prefix: 'lastVillageGrowth',
         name: 'Last Village Growth',
         version: 'v1.0.6',
-        author: 'RedAlert',
-        authorUrl: 'https://twscripts.dev/',
-        helpLink:
-            'https://forum.tribalwars.net/index.php?threads/last-village-growth.287184/',
     },
     translations: {
         en_DK: {
@@ -40,7 +21,7 @@ var scriptConfig = {
                 'Script is not allowed to be used on this TW market!',
         },
     },
-    allowedMarkets: ['es', 'es'],['fr', 'fr'],['en', 'us']
+    allowedMarkets: ['es', 'es'],
     allowedScreens: ['map'],
     allowedModes: [],
     isDebug: DEBUG,
