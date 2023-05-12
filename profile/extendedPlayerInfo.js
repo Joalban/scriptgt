@@ -30,7 +30,7 @@ var scriptConfig = {
     },
     translations: {
         en_DK: {
-            'Extended Player Info': 'Extended Player Info',
+            'Extended Player Info': 'Info Jugador',
             Help: 'Ayuda',
             'Script must be executed from Player Info screen!':
                 'Ejecutar desde el Perfil!',
