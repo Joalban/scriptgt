@@ -149,7 +149,7 @@ var scriptConfig = {
     enableCountApi: true,
 };
 
-$.getScript('https://twscripts.dev/scripts/twSDK.js', async function () {
+$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js', async function () {
     // Initialize Library
     await twSDK.init(scriptConfig);
     const scriptInfo = twSDK.scriptInfo();
