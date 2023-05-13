@@ -60,7 +60,7 @@ var scriptConfig = {
                 'Serveur non accepte!',
         },
     },
-    allowedMarkets: ['es', 'ES'],
+    allowedMarkets: ['es', 'ES'],['fr', 'FR'],
     allowedScreens: ['map'],
     allowedModes: [],
     isDebug: DEBUG,
@@ -70,7 +70,7 @@ var scriptConfig = {
 if (typeof TWMap === 'undefined') TWMap = {};
 if ('TWMap' in window) mapOverlay = TWMap;
 
-$.getScript('https://twscripts.dev/scripts/twSDK.js', async function () {
+$.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js', async function () {
     // Initialize Library
     await twSDK.init(scriptConfig);
     const scriptInfo = twSDK.scriptInfo();
