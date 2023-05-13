@@ -60,7 +60,7 @@ var scriptConfig = {
                 'Serveur non accepte!',
         },
     },
-    allowedMarkets: [],
+    allowedMarkets: ['es', 'ES'],
     allowedScreens: ['map'],
     allowedModes: [],
     isDebug: DEBUG,
