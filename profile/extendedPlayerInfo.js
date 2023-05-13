@@ -30,21 +30,21 @@ var scriptConfig = {
     },
     translations: {
         en_DK: {
-            'Extended Player Info': 'Info Jugador',
-            Help: 'Ayuda',
+            'Extended Player Info': 'Extended Player Info',
+            Help: 'Help',
             'Script must be executed from Player Info screen!':
-                'Ejecutar desde el Perfil!',
-            'Points:': 'Puntos:',
-            'Rank:': 'Rango:',
-            'Player:': 'Jugador:',
-            'All Villages Coords:': 'Coordinaqdas Pueblos:',
-            'Villages:': 'Pueblos:',
-            'TWStats Player Profile': 'TWStats Perfil Jugador',
-            'Show Player on Global Map': 'Mostrar Jugador en Global Map',
-            'TribalWars Maps Player Profile': 'TribalWars Maps Perfil Jugador',
-            'Village Coords for Continent': 'Coordinadas Pueblos por Continente',
-            'village/s': 'pueblo/s',
-            'There was an error!': 'Se ha fastidiado algo!',
+                'Script must be executed from Player Info screen!',
+            'Points:': 'Points:',
+            'Rank:': 'Rank:',
+            'Player:': 'Player:',
+            'All Villages Coords:': 'All Villages Coords:',
+            'Villages:': 'Villages:',
+            'TWStats Player Profile': 'TWStats Player Profile',
+            'Show Player on Global Map': 'Show Player on Global Map',
+            'TribalWars Maps Player Profile': 'TribalWars Maps Player Profile',
+            'Village Coords for Continent': 'Village Coords for Continent',
+            'village/s': 'village/s',
+            'There was an error!': 'There was an error!',
         },
         sk_SK: {
             'Extended Player Info': 'Rozšírený profil hráča',
@@ -102,7 +102,7 @@ var scriptConfig = {
             'There was an error!': 'There was an error!',
         },
         fr_FR: {
-            'Extended Player Info': 'Informations étendues sur le joueur',
+            'Extended Player Info': 'Info Joueur',
             Help: 'Aide',
             'Script must be executed from Player Info screen!':
                 "Le script doit être exécuté sur le profil d'un joueur!",
@@ -120,6 +120,26 @@ var scriptConfig = {
                 'Coordonnées du villages pour le continent',
             'village/s': 'village/s',
             'There was an error!': 'There was an error!',
+        },
+		es_ES: {
+            'Extended Player Info': 'Info Jugador',
+            Help: 'Ayuda',
+            'Script must be executed from Player Info screen!':
+                "Ejecutar desde Perfil Jugador!",
+            'Points:': 'Puntos:',
+            'Rank:': 'Rango:',
+            'Player:': 'Jugador:',
+            'All Villages Coords:': 'Todas las Coordenadas:',
+            'Villages:': 'Pueblos:',
+            'TWStats Player Profile': 'TWStats Perfil Jugador',
+            'Show Player on Global Map':
+                'Mostrar Jugador en Mapa',
+            'TribalWars Maps Player Profile':
+                'TribalWars Maps Perfil Jugador',
+            'Village Coords for Continent':
+                'Coord Pueblos por Continente',
+            'village/s': 'pueblo/s',
+            'There was an error!': 'Se ha fastidiado algo!',
         },
     },
     allowedMarkets: [],
@@ -211,10 +231,9 @@ $.getScript('https://twscripts.dev/scripts/twSDK.js', async function () {
         }
 
         let regex = '/\\d+/';
-
-        let randomOnlyScouts = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL; if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point'); coords = coords.split(' '); index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|'); doc.forms.units.x.value = coords[0]; doc.forms.units.y.value = coords[1]; if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) { insertUnit(doc.forms.units.spy, 0); insertUnit(doc.forms.units.spy, 1); } void (0);`;
-        let randomOnlyRams = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL;if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point');coords = coords.split(' ');index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|');doc.forms.units.x.value = coords[0];doc.forms.units.y.value = coords[1];if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) {insertUnit(doc.forms.units.spy, 0);insertUnit(doc.forms.units.spy, 1);}if (doc.getElementsByName('ram')[0].parentNode.textContent.match(${regex})[0] * 1 > 0) {insertUnit(doc.forms.units.ram, 0);insertUnit(doc.forms.units.ram, 1);}void (0);`;
-        let randomOnlyCats = `javascript:coords='${playerVillageCoordsString}';var doc=document;url=doc.URL;if (url.indexOf('screen=place') == -1) alert('This script needs to be run from the rally point');coords = coords.split(' ');index = Math.round(Math.random() * (coords.length - 1));coords = coords[index];coords = coords.split('|');doc.forms.units.x.value = coords[0];doc.forms.units.y.value = coords[1];if (doc.getElementsByName('spy')[0].parentNode.textContent.match(${regex})[0] * 1 >= 1) {insertUnit(doc.forms.units.spy, 0);insertUnit(doc.forms.units.spy, 1);}if (doc.getElementsByName('catapult')[0].parentNode.textContent.match(${regex})[0] * 1 > 0) {insertUnit(doc.forms.units.catapult, 0);insertUnit(doc.forms.units.catapult, 1);}void (0);`;
+        let randomOnlyScouts = `javascript:var lanca =00; var espada=00;var barbaro=00;var arqueiro=00; var explorador=05;var cavalaria_leve=00;var cavalaria_arqueira=00;var cavalaria_pesada=00;var catapulta=00;var ariete=00;var coords_ataque='${playerVillageCoordsString}';var apoiar=false;var aviso=true;var cookieName="fakeapoio";var repetir_ataques = 1;$.getScript("https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/fakepro.js");void(0);`;
+		let randomOnlyRams = `javascript:var lanca =00; var espada=00;var barbaro=00;var arqueiro=00; var explorador=00;var cavalaria_leve=00;var cavalaria_arqueira=00;var cavalaria_pesada=00;var catapulta=00;var ariete=05;var coords_ataque='${playerVillageCoordsString}';var apoiar=false;var aviso=true;var cookieName="fakeapoio";var repetir_ataques = 1;$.getScript("https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/fakepro.js");void(0);`;
+		let randomOnlyCats = `javascript:var lanca =00; var espada=00;var barbaro=00;var arqueiro=00; var explorador=00;var cavalaria_leve=00;var cavalaria_arqueira=00;var cavalaria_pesada=00;var catapulta=05;var ariete=00;var coords_ataque='${playerVillageCoordsString}';var apoiar=false;var aviso=true;var cookieName="fakeapoio";var repetir_ataques = 1;$.getScript("https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/fakepro.js");void(0);`;
 
         let sequentialOnlyScouts = `javascript:coords='${playerVillageCoordsString}';var doc=document,index=0;url=doc.URL,Timing.pause();var cookieparams=doc.cookie.match(/GenFakeScript0=index([0-9]*)/);if(null!=cookieparams&&(index=1*cookieparams[1]),-1==url.indexOf("screen=place")){var r=confirm("This script needs to be run from the rally point Press OK to reset index.");1==r&&(index=0)}coords=coords.split(" ");var restart=!1;index>=coords.length&&(index=0,restart=!0);var d=new Date;d.setDate(d.getDate()+5),doc.cookie="GenFakeScript0=index"+(index+1)+";expires="+d.toGMTString(),restart&&alert("End of coord list is reached. Starting over"),coords=coords[index],coords=coords.split("|"),doc.forms.units.x.value=coords[0],doc.forms.units.y.value=coords[1],1*doc.getElementsByName("spy")[0].parentNode.textContent.match(${regex})[0]>=1&&(insertUnit(doc.forms.units.spy,0),insertUnit(doc.forms.units.spy,1));`;
         let sequentialOnlyRams = `javascript:coords='${playerVillageCoordsString}';var doc=document,index=0;url=doc.URL,Timing.pause();var cookieparams=doc.cookie.match(/GenFakeScript0=index([0-9]*)/);if(null!=cookieparams&&(index=1*cookieparams[1]),-1==url.indexOf("screen=place")){var r=confirm("This script needs to be run from the rally point Press OK to reset index.");1==r&&(index=0)}coords=coords.split(" ");var restart=!1;index>=coords.length&&(index=0,restart=!0);var d=new Date;d.setDate(d.getDate()+5),doc.cookie="GenFakeScript0=index"+(index+1)+";expires="+d.toGMTString(),restart&&alert("End of coord list is reached. Starting over"),coords=coords[index],coords=coords.split("|"),doc.forms.units.x.value=coords[0],doc.forms.units.y.value=coords[1],1*doc.getElementsByName("spy")[0].parentNode.textContent.match(${regex})[0]>=1&&(insertUnit(doc.forms.units.spy,0),insertUnit(doc.forms.units.spy,1)),1*doc.getElementsByName("ram")[0].parentNode.textContent.match(${regex})[0]>0&&(insertUnit(doc.forms.units.ram,0),insertUnit(doc.forms.units.ram,1));`;
@@ -269,15 +288,15 @@ $.getScript('https://twscripts.dev/scripts/twSDK.js', async function () {
             ${renderVillageCoordsForContinents}
             <div class="ra-grid ra-mb15">
                 <div>
-                    <label class="ra-label" for="randomOnlyScouts">Random Only Scouts</label>
+                    <label class="ra-label" for="randomOnlyScouts">Fake Espias</label>
                     <textarea class="ra-textarea" readonly id="randomOnlyScouts">${randomOnlyScouts}</textarea>
                 </div>
                 <div>
-                    <label class="ra-label" for="randomOnlyRams">Random Only Rams</label>
+                    <label class="ra-label" for="randomOnlyRams">Fake Arietes</label>
                     <textarea class="ra-textarea" readonly id="randomOnlyRams">${randomOnlyRams}</textarea>
                 </div>
                 <div>
-                    <label class="ra-label" for="randomOnlyCats">Random Only Cats</label>
+                    <label class="ra-label" for="randomOnlyCats">Fake Catapultas</label>
                     <textarea class="ra-textarea" readonly id="randomOnlyCats">${randomOnlyCats}</textarea>
                 </div>
             </div>
