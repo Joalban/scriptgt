@@ -12,5 +12,4 @@ insertUnit(doc.forms[0].ram, 1);
 insertUnit(doc.forms[0].catapult, 1);
 insertUnit(doc.forms[0].knight, 1);  
 insertUnit(doc.forms[0].snob, 1);
-{document.forms[0].submit.click();
 void(0);
