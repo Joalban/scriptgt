@@ -133,9 +133,9 @@ var scriptConfig = {
             'Villages:': 'Pueblos:',
             'TWStats Player Profile': 'TWStats Perfil Jugador',
             'Show Player on Global Map':
-                'Mostrar Jugador en Mapa',
+                'Jugador en Mapa',
             'TribalWars Maps Player Profile':
-                'TribalWars Maps Perfil Jugador',
+                'TWMaps Perfil Jugador',
             'Village Coords for Continent':
                 'Coord Pueblos por Continente',
             'village/s': 'pueblo/s',
@@ -253,7 +253,7 @@ $.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js'
 
         const content = `
             <div class="ra-mb15">
-                    <strong>${twSDK.tt('Player:')}</strong> ${playerName}<br>
+                    <strong>${twSDK.tt('Player:')}</strong> [player]${playerName}[/player]<br>
                     <strong>${twSDK.tt('Points:')}</strong> ${playerPoints}<br>
                     <strong>${twSDK.tt('Rank:')}</strong> ${playerRank}<br>
                     <strong>${twSDK.tt('Villages:')}</strong> ${
@@ -272,11 +272,8 @@ $.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js'
                 </a>
             </div>
             <div class="ra-mb15">
-                <img src="${pointsGraph}" />
-                <img src="${villagesGraph}" />
-                <img src="${odGraph}" />
-                <img src="${odaGraph}" />
-                <img src="${oddGraph}" />
+                ODA-<img src="${odaGraph}" />
+                ODD-<img src="${oddGraph}" />
             </div>
             <div class="ra-mb15">
                 <label class="ra-label" for="allVillagesCoords" class="ra-label">
