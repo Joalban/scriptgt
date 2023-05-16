@@ -254,6 +254,7 @@ $.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js'
         const content = `
             <div class="ra-mb15">
                     <strong>${twSDK.tt('Player:')}</strong> [player]${playerName}[/player]<br>
+					<strong>${twSDK.tt('Villages BBC:')}</strong> [coord]${playerVillageCoords.length}[/coord]<br>
                     <strong>${twSDK.tt('Points:')}</strong> ${playerPoints}<br>
                     <strong>${twSDK.tt('Rank:')}</strong> ${playerRank}<br>
                     <strong>${twSDK.tt('Villages:')}</strong> ${
@@ -283,6 +284,16 @@ $.getScript('https://cdn.jsdelivr.net/gh/Joalban/scriptgt@main/profile/twSDK.js'
                 <textarea class="ra-textarea" readonly id="allVillagesCoords">${playerVillageCoordsString.trim()}</textarea>
             </div>
             ${renderVillageCoordsForContinents}
+			//prueba
+			<div class="ra-mb15">
+                <label class="ra-label" for="allVillagesCoords" class="ra-label">
+                    ${twSDK.tt('All Villages Coords:')}
+                    (${playerVillageCoords.length} ${twSDK.tt('village/s')})
+                </label>
+                <textarea class="ra-textarea" readonly id="allVillagesCoords">${playerVillageCoordsString.trim()}</textarea>
+            </div>
+            ${renderVillageCoordsForContinents}
+			//prueba
             <div class="ra-grid ra-mb15">
                 <div>
                     <label class="ra-label" for="randomOnlyScouts">Fake Espias</label>
