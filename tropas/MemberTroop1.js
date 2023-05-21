@@ -496,7 +496,7 @@ function displayEverything() {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html += `<p style="padding:10px">[player]${playerName}[/player]</p><tr><td><table><tr><td class="item-padded"><img src="[img]/graphic/unit/unit_${troopName}.png[/img]" title="${troopName}" alt="" class=""></td>
+            '<p style="padding:10px">[player]${playerName}[/player]</p>' + html += `<tr><td><table><tr><td class="item-padded"><img src="[img]/graphic/unit/unit_${troopName}.png[/img]" title="${troopName}" alt="" class=""></td>
                 <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])},</td></tr></table></td>`
         })
 
