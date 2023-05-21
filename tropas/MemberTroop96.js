@@ -109,7 +109,7 @@ color: white;
 }
 
 .item-padded {
-padding: 5px;
+padding: 1px;
 }
 
 .flex-container {
@@ -508,7 +508,7 @@ function displayEverything() {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html += `<td><td>-[unit]</td><td class="item-padded">${troopName}</td><td>[/unit]</td>
+            html += `<td><p>-[unit]</p><td class="item-padded"><p>${troopName}</p></td><td>[/unit]</td>
                 <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])}</td></td>`
         })
 
@@ -519,7 +519,7 @@ function displayEverything() {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html += `<td><td>[|][unit]</td><td class="item-padded">${troopName}</td><td>[/unit]</td>
+            html += `<td><td>[unit]</td><td class="item-padded"><a href="/graphic/unit/unit_${troopName}.png">${troopName}</a></td><td>[/unit]</td>
                 <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])}</td></td>`
         })
 
