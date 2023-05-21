@@ -492,12 +492,13 @@ function displayEverything() {
                 </div>
                 <button class="collapsible">More details</button>
                 <div class="content"><table><tr>`;
+        <p style="padding:10px">[player]${playerName}[/player]</p>
         $.each(playerData[playerName]["total"], function (troopName) {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html += `<td><table><tr><td class="item-padded"><img src="/graphic/unit/unit_${troopName}.png" title="${troopName}" alt="" class=""></td>
-                <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])}</td></tr></table></td>`
+            html += `<td><table><tr><td class="item-padded"><img src="[img]/graphic/unit/unit_${troopName}.png[/img]" title="${troopName}" alt="" class=""></td>
+                <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName]),}</td></tr></table></td>`
         })
 
         html += `</tr></table></div></div>`;
