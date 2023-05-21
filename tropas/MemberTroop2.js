@@ -491,7 +491,10 @@ function displayEverything() {
         html += `</table></td></tr></table>
                 </div>
                 <button class="collapsible">More details</button>
-                <tr>'
+                <div class="content"><table><tr>`;
+        $.each(playerData[playerName]["total"], function (troopName) {
+            if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
+                html += '</tr><tr>'
             }
 			<p style="padding:10px">[player]${playerName}[/player]</p><tr>
             html += `<td><table><tr><td class="item-padded"><[img]/graphic/unit/unit_${troopName}.png[/img]></td>
