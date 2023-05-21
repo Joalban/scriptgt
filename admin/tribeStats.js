@@ -181,7 +181,7 @@
         columnName = 0;
         rows = 4;
         for (var i = 0; i < customNames.length; i++) {
-            html += `<tr><td id="${customNames[i]}" style="width:50px;padding: 5px;">${customNames[i]}</td></tr>`
+            html += `<tr><td id="${customNames[i]}" style="width:50px;padding: 5px;">[player]${customNames[i]}[/player]</td></tr>`
             customNames[i] = customNames[i].trim().split(' ').join('+');
         }
         html += `</table></div>`
