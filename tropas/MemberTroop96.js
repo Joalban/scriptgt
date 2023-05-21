@@ -508,7 +508,7 @@ function displayEverything() {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html += `<td><td>-[unit]</td><td class="item-padded"><a href="/graphic/unit/unit_${troopName}.png">[unit]${troopName}[/unit]</a></td><td>[/unit]</td>
+            html += `<td><td>-[unit]</td><td>${troopName}</td><td>[/unit]</td>
                 <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])}</td></td>`
         })
 
@@ -519,7 +519,7 @@ function displayEverything() {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
                 html += '</tr><tr>'
             }
-            html +[|]= `<td><td>[unit]</td><td class="item-padded"><a href="/graphic/unit/unit_${troopName}.png">[unit]${troopName}[/unit]</a></td><td>[/unit]</td>
+            html += `<td><td>[unit]</td><td>${troopName}</td><td>[/unit]</td>
                 <td class="item-padded">${numberWithCommas(playerData[playerName]["total"][troopName])}</td></td>`
         })
 
