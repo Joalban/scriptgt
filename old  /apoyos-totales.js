@@ -2,7 +2,7 @@ javascript:
 
 x = archers;
 /*vision general -> pueblo especificado*/
-/*Les fonctions fnGetConfig, fnSetup et fnStatus sont empruntées à DalesMckay, facilitant ainsi le debug des scripts*/
+/*Les fonctions fnGetConfig, fnSetup et fnStatus sont empruntÃ©es Ã  DalesMckay, facilitant ainsi le debug des scripts*/
 
 function fnGetConfig(){
 	var oRequest=new XMLHttpRequest();
@@ -178,14 +178,14 @@ if(troupes[f].match(/\d+ Espia?/))	{
 	if(x)donn[4] = parseInt(troupes[f].match(/\d+/));
 	else donn[3] = parseInt(troupes[f].match(/\d+/));
 }
-if(troupes[f].match(/\d+ Caballería ligera/))	{
+if(troupes[f].match(/\d+ CaballerÃ­a ligera/))	{
 	if(x)donn[5] = parseInt(troupes[f].match(/\d+/));
 	else donn[4] = parseInt(troupes[f].match(/\d+/));
 }
 if(troupes[f].match(/\d+ Arquero a caballo?/))	{
 	if(x) donn[6] = parseInt(troupes[f].match(/\d+/));
 }
-if(troupes[f].match(/\d+ Caballería pesada/))	{
+if(troupes[f].match(/\d+ CaballerÃ­a pesada/))	{
 	if(x) donn[7] = parseInt(troupes[f].match(/\d+/));
 	else donn[5] = parseInt(troupes[f].match(/\d+/));
 }
