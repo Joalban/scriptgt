@@ -12,7 +12,7 @@ for(i=0; i<table.length; i++) {
 		sub = table[i+2].getElementsByTagName('a')[0];
 		sub.parentNode.innerHTML = '[ally]' + sub.innerHTML + '[/ally]';
 		sub = table[i+3].getElementsByTagName('th');
-		sub[0].innerHTML = 'Nº.';
+		sub[0].innerHTML = 'NÂº.';
 		sub[0].setAttribute('width','40');
 		sub[1].innerHTML = 'Pueblo';
 		sub[1].setAttribute('width','220');
