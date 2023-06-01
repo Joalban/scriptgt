@@ -449,7 +449,6 @@ function displayEverything() {
         html += offTable + "</table></td><td><table>" + defTable + "</table></td><td><table>" + other;
         html += `</table></td></tr></table>
                 </div>
-		 <button class="collapsible">BBCode</button>
                 <div class="content"><tr>`;
         $.each(playerData[playerName]["total"], function (troopName) {
             if (troopName == "spy" || troopName == "ram" || troopName == "snob") {
