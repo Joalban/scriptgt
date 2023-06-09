@@ -125,7 +125,7 @@ var scriptConfig = {
         },
     },
     allowedMarkets: [],
-    allowedScreens: ['info_ally'],
+    allowedScreens: ['info_ally&id'],
     allowedModes: [],
     isDebug: DEBUG,
     enableCountApi: true,
